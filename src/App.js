@@ -13,7 +13,10 @@ class App extends Component {
   componentDidMount() {
     // let id = this.state.id
     // fetch(`/api/v1/bars/${id}`)
-    fetch('http://pokeapi.co/api/v2/pokemon-form/1/')
+
+    // let randomId = (Math.random() * 811)
+    let randomId = Math.floor(Math.random() * 811)+1
+    fetch(`http://pokeapi.co/api/v2/pokemon-form/${randomId}`)
     .then(response => response.json())
     .then(body => {
       console.log(body)
@@ -26,15 +29,20 @@ class App extends Component {
   }
 
   render() {
-    console.log(this.state.pokemon.name)
+    // console.log(this.state.pokemon.name)
     // console.log(this.state.pokemon.sprites.back_default) //sprites is undefined here
 
+
+
     return (
-      <div>
-        <h1>Pokebutt!</h1>
-        <h3>{this.state.name}</h3>
-        <img src={this.state.picture} alt=''/>
-        <button>Get a Random Pokebutt</button>
+      <div className="row">
+        <div className="small-6 small-centered columns text-center">
+          <h1>Pokébutt!</h1>
+          {/* <img src="https://upload.wikimedia.org/wikipedia/en/3/39/Pokeball.PNG" alt=''/> */}
+          <img src={this.state.picture} alt=''/>
+          <h3>{this.state.name}</h3>
+          <button className="button">Get a Random Pokebutt</button>
+        </div>
       </div>
     );
   }
