@@ -58,13 +58,12 @@ class App extends Component {
       name = ''
     }
 
-
     return (
       <div className="row">
-        <div className="small-6 small-centered columns text-center">
+        <div className="small-12 large-6 small-centered columns text-center">
           <h1>Pokébutt!</h1>
           <img src={picture} alt=''/>
-          <h3>{name}</h3>
+          <h3>{name} butt</h3>
           <button className="button" onClick={this.handleClick}>Get a Random Pokebutt</button>
         </div>
       </div>
