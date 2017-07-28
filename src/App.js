@@ -4,27 +4,21 @@ class App extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      pokemon: ''
-      // name: '',
-      // picture: ''
+      name: '',
+      picture: ''
     }
     this.handleClick = this.handleClick.bind(this)
   }
 
   componentDidMount() {
-    // let id = this.state.id
-    // fetch(`/api/v1/bars/${id}`)
-
     // let randomId = Math.floor(Math.random() * 802)+1
     let randomId = Math.floor(Math.random() * 151)+1
     fetch(`http://pokeapi.co/api/v2/pokemon-form/${randomId}`)
     .then(response => response.json())
     .then(body => {
-      console.log(body)
       this.setState({
-        pokemon: body
-        // name: body.name,
-        // picture: body.sprites.back_default
+        name: body.name,
+        picture: body.sprites.back_default
       })
     })
   }
@@ -35,34 +29,30 @@ class App extends Component {
     fetch(`http://pokeapi.co/api/v2/pokemon-form/${randomId}`)
     .then(response => response.json())
     .then(body => {
-      console.log(body)
       this.setState({
-        pokemon: body
+        name: body.name,
+        picture: body.sprites.back_default
       })
     })
     .then()
   }
 
   render() {
-
-    let picture;
     let name;
-    if (
-      this.state.pokemon.sprites !== undefined &&
-      this.state.pokemon.name !== undefined
-    ) {
-      picture = this.state.pokemon.sprites.back_default
-      name = this.state.pokemon.name
+    let picture;
+    if (this.state.name !== undefined && this.state.picture !== undefined) {
+      name = this.state.name
+      picture = this.state.picture
     } else {
-      picture = ''
-      name = ''
+      name = 'Welcome to Pokébutt!'
+      picture = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/back/1.png'
     }
 
     return (
       <div className="row">
-        <div className="small-12 large-6 small-centered columns text-center">
+        <div className="small-12 large-6 small-centered columns text-center main">
           <h1>Pokébutt!</h1>
-          <img src={picture} alt=''/>
+          <img src={picture} alt={name}/>
           <h3>{name} butt</h3>
           <button className="button" onClick={this.handleClick}>Get a Random Pokebutt</button>
         </div>

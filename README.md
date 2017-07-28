@@ -1,7 +1,7 @@
 ## About Pokebutt
 
-This project is was created to explore APIs and React.js.
-The pokebutt theme was inspired by the back default sprite when I was digging around in the Pokemon API. 
+This project is was created to explore React.js, APIs, Fetch, and Foundation.
+The 'Pokebutt' theme was inspired by the back-default sprite when I was digging around in the Pokemon API.
 
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
@@ -50,3 +50,5 @@ class Button extends Component {
   }
 }
 ```
+
+## TODO
