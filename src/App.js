@@ -13,7 +13,7 @@ class App extends Component {
   componentDidMount() {
     // let randomId = Math.floor(Math.random() * 802)+1
     let randomId = Math.floor(Math.random() * 151)+1
-    fetch(`http://pokeapi.co/api/v2/pokemon-form/${randomId}`)
+    fetch(`https://pokeapi.co/api/v2/pokemon-form/${randomId}`)
     .then(response => response.json())
     .then(body => {
       this.setState({
@@ -26,7 +26,7 @@ class App extends Component {
   handleClick(event) {
     // let randomId = Math.floor(Math.random() * 802)+1
     let randomId = Math.floor(Math.random() * 151)+1
-    fetch(`http://pokeapi.co/api/v2/pokemon-form/${randomId}`)
+    fetch(`https://pokeapi.co/api/v2/pokemon-form/${randomId}`)
     .then(response => response.json())
     .then(body => {
       this.setState({
