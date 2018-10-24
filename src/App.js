@@ -40,7 +40,7 @@ class App extends Component {
   render() {
     let name;
     let picture;
-    if (this.state.name !== undefined && this.state.picture !== undefined) {
+    if (this.state.name !== '' && this.state.picture !== '') {
       name = this.state.name
       picture = this.state.picture
     } else {
